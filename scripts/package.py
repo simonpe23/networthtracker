@@ -38,7 +38,7 @@ html = html.replace('href="/favicon.svg"', f'href="data:image/svg+xml;base64,{fa
 html_path = out / f'sp-net-worth-tracker-{edition}.html'
 html_path.write_text(html)
 source_path = out / f'sp-net-worth-tracker-{edition}-source.zip'
-entries = ['src', 'public', 'tests', 'scripts', '.gitignore', '.prettierignore', 'README.md', 'BUILD_PROMPT.md', 'index.html', 'package.json', 'package-lock.json', 'playwright.config.ts', 'tsconfig.json', 'vite.config.ts']
+entries = ['.github', 'src', 'public', 'tests', 'scripts', '.gitignore', '.prettierignore', 'README.md', 'BUILD_PROMPT.md', 'index.html', 'package.json', 'package-lock.json', 'playwright.config.ts', 'tsconfig.json', 'vite.config.ts']
 with zipfile.ZipFile(source_path, 'w', zipfile.ZIP_DEFLATED) as archive:
     for entry in entries:
         path = root / entry
